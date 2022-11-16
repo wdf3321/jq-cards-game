@@ -21,13 +21,13 @@ function init() {
       $(".card")
         .eq(i)
         .find(".card-front")
-        .css("background-image", `url(../atoz/A${num}.png)`);
+        .css("background-image", `url('../atoz/A${num}.png')`);
       $(".card").eq(i).attr("data-card", num);
     } else {
       $(".card")
         .eq(i)
         .find(".card-front")
-        .css("background-image", `url(../atoz/B${num}.png)`);
+        .css("background-image", `url('../atoz/B${num}.png')`);
       $(".card").eq(i).attr("data-card", num);
     }
     // 打散 92張卡的隨機索引(0-91)
