@@ -21,7 +21,7 @@ function init() {
       $(".card")
         .eq(i)
         .find(".card-front")
-        .css("background-image", `url('./atoz/A${num}.png')`);
+        .css("background-image", `url('./atoz/A(${num}).png')`);
       $(".card").eq(i).attr("data-card", num);
     } else {
       $(".card")
