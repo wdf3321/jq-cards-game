@@ -122,19 +122,4 @@ body {
   transform: rotateY(180deg);
 }
 
-@media (min-width: 1600px) {
-  .card {
-    width:120px;
-    height:120px;
-  }
-  #game {
-    max-width: 840px;
-    height: 700px;
-  }
-  #function {
-  width: 300px;
-  height: 700px;
-  font-size: 30px;
-  }
 
-}
