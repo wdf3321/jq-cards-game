@@ -3,14 +3,14 @@ function init() {
 	$("#begin").show();
 	$(".card").remove();
 	$("#review").children().remove();
-	// 26張 * 2
+
 	for (let i = 0; i < 52; i++) {
 		$("#game").append(` <div class="card card-open">
     <div class="card-front"></div>
     <div class="card-back"></div>
   </div>`);
 	}
-	// 決定數字
+
 	for (let i = 0; i < 52; i++) {
 		const num = (i % 26) + 1;
 		if (i < 26) {
@@ -26,12 +26,12 @@ function init() {
 				.css("background-image", `url('./atoz/B${num}.png')`);
 			$(".card").eq(i).attr("data-card", num);
 		}
-		// 打散
+
 		const target = Math.round(Math.random() * 52);
 		$(".card").eq(target).insertAfter($(".card").eq(i));
 	}
 
-	// 隨機
+
 	let str = "";
 	let numbers = [];
 	for (let i = 0; i < 11; i++) {
@@ -46,14 +46,13 @@ function init() {
 	}
 	// console.log(numbers);
 
-	// 選到的隱藏
 	for (let number of numbers) {
 		$(`[data-card="${number}"]`).hide();
 	}
 }
 init();
 
-// 點擊開始
+
 $("#btnStart").on("click", function () {
 	$("#begin").hide();
 	$(".card").removeClass("card-open");
@@ -62,15 +61,15 @@ $("#btnStart").on("click", function () {
 		time++;
 		$("#time").text(time);
 	}, 1000);
-	// 翻牌
+
 	$("#game").on("click", ".card", function () {
-		// 最多翻兩張
+
 		if ($(".card-open").length < 2 && !$(this).hasClass("card-open")) {
 			$(this).addClass("card-open");
 		}
-		// 翻開兩張
+
 		if ($(".card-open").length === 2) {
-			// 兩張數字一樣
+
 			if (
 				$(".card-open").eq(0).attr("data-card") ===
 				$(".card-open").eq(1).attr("data-card")
