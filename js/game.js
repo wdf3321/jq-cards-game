@@ -44,7 +44,7 @@ function init() {
 		}
 		numbers.push(str);
 	}
-	// console.log(numbers);
+
 
 	for (let number of numbers) {
 		$(`[data-card="${number}"]`).hide();
